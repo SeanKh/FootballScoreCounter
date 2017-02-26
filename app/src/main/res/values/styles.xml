@@ -11,17 +11,79 @@
     <style name="image_view">
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_width">fill_parent</item>
     </style>
 
     <style name="text_main">
         <item name="android:layout_gravity">center</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/main_text_size</item>
+        <item name="android:text">@string/goal</item>
+    </style>
+
+    <style name="sub_text_main">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/sub_text_size</item>
     </style>
 
     <style name="text_score">
         <item name="android:textColor">@android:color/holo_blue_dark</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/main_score_text_size</item>
+        <item name="android:text">@string/text_score</item>
     </style>
 
+    <style name="text_sub_score">
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/sub_score_text_size</item>
+        <item name="android:text">@string/text_score</item>
+    </style>
+
+    <style name="HeadLogo">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/image_layout_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="Select_text">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:text">@string/spinner_title</item>
+    </style>
+
+    <style name="Spinner">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/button_margin</item>
+    </style>
+
+    <style name="Minus_button">
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:text">@string/Minus</item>
+    </style>
+
+    <style name="Add_button">
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:text">@string/Plus</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
 </resources>

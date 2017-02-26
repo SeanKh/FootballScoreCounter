@@ -11,13 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    int scoreTeamA=0;
-    int foulTeamA=0;
-    int cornerTeamA=0;
+    int scoreTeamA = 0;
+    int foulTeamA = 0;
+    int cornerTeamA = 0;
 
-    int scoreTeamB=0;
-    int foulTeamB=0;
-    int cornerTeamB=0;
+    int scoreTeamB = 0;
+    int foulTeamB = 0;
+    int cornerTeamB = 0;
 
     // References to GUI components.
     private Spinner teamA_spinner;
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.hull_city, R.drawable.sunderland1, R.drawable.tottenham1};
 
     // Animal names
-    private final String[] teamB = {"Crystal Palace","Arsenal", "Hull", "Sunderland", "Tottenham"};
+    private final String[] teamB = {"Crystal Palace", "Arsenal", "Hull", "Sunderland", "Tottenham"};
     // Animal image teamAIds
     // Both names and image teamAIds are in the same order
     private final int[] teamBIDs = {R.drawable.crystal_palace, R.drawable.arsenal1,
@@ -126,115 +126,102 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-    public void goalAdd_TeamA(View view)
-    {
-        scoreTeamA+=1;
+    public void goalAdd_TeamA(View view) {
+        scoreTeamA += 1;
         displayGoalForTeamA(scoreTeamA);
     }
 
-    public void foulAdd_TeamA(View view)
-    {
-        foulTeamA+=1;
+    public void foulAdd_TeamA(View view) {
+        foulTeamA += 1;
         displayFoulForTeamA(foulTeamA);
     }
 
-    public void cornerAdd_TeamA(View view)
-    {
-        cornerTeamA+=1;
+    public void cornerAdd_TeamA(View view) {
+        cornerTeamA += 1;
         displayCornerForTeamA(cornerTeamA);
     }
 
-    public void goalMinus_TeamA(View view)
-    {
-        if(scoreTeamA==0){
+    public void goalMinus_TeamA(View view) {
+        if (scoreTeamA == 0) {
             Toast.makeText(this, "It cannot be less than 0", Toast.LENGTH_SHORT).show();
             return;
         }
-        scoreTeamA-=1;
+        scoreTeamA -= 1;
         displayGoalForTeamA(scoreTeamA);
     }
 
-    public void foulMinus_TeamA(View view)
-    {
-        if(foulTeamA==0){
+    public void foulMinus_TeamA(View view) {
+        if (foulTeamA == 0) {
             Toast.makeText(this, "It cannot be less than 0", Toast.LENGTH_SHORT).show();
             return;
         }
-        foulTeamA-=1;
+        foulTeamA -= 1;
         displayFoulForTeamA(foulTeamA);
     }
 
-    public void cornerMinus_TeamA(View view)
-    {
-        if(cornerTeamA==0){
+    public void cornerMinus_TeamA(View view) {
+        if (cornerTeamA == 0) {
             Toast.makeText(this, "It cannot be less than 0", Toast.LENGTH_SHORT).show();
             return;
         }
-        cornerTeamA-=1;
+        cornerTeamA -= 1;
         displayCornerForTeamA(cornerTeamA);
     }
 
     /*For Team B*/
-    public void goalAdd_TeamB(View view)
-    {
-        scoreTeamB+=1;
+    public void goalAdd_TeamB(View view) {
+        scoreTeamB += 1;
         displayGoalForTeamB(scoreTeamB);
     }
 
-    public void foulAdd_TeamB(View view)
-    {
-        foulTeamB+=1;
+    public void foulAdd_TeamB(View view) {
+        foulTeamB += 1;
         displayFoulForTeamB(foulTeamB);
     }
 
-    public void cornerAdd_TeamB(View view)
-    {
-        cornerTeamB+=1;
+    public void cornerAdd_TeamB(View view) {
+        cornerTeamB += 1;
         displayCornerForTeamB(cornerTeamB);
     }
 
-    public void goalMinus_TeamB(View view)
-    {
-        if(scoreTeamB==0){
+    public void goalMinus_TeamB(View view) {
+        if (scoreTeamB == 0) {
             Toast.makeText(this, "It cannot be less than 0", Toast.LENGTH_SHORT).show();
             return;
         }
-        scoreTeamB-=1;
+        scoreTeamB -= 1;
         displayGoalForTeamB(scoreTeamB);
     }
 
-    public void foulMinus_TeamB(View view)
-    {
-        if(foulTeamB==0){
+    public void foulMinus_TeamB(View view) {
+        if (foulTeamB == 0) {
             Toast.makeText(this, "It cannot be less than 0", Toast.LENGTH_SHORT).show();
             return;
         }
-        foulTeamB-=1;
+        foulTeamB -= 1;
         displayFoulForTeamB(foulTeamB);
     }
 
-    public void cornerMinus_TeamB(View view)
-    {
-        if(cornerTeamB==0){
+    public void cornerMinus_TeamB(View view) {
+        if (cornerTeamB == 0) {
             Toast.makeText(this, "It cannot be less than 0", Toast.LENGTH_SHORT).show();
             return;
         }
-        cornerTeamB-=1;
+        cornerTeamB -= 1;
         displayCornerForTeamB(cornerTeamB);
     }
 
-    public void reset(View v)
-    {
-        scoreTeamA=0;
-        foulTeamA=0;
-        cornerTeamA=0;
+    public void reset(View v) {
+        scoreTeamA = 0;
+        foulTeamA = 0;
+        cornerTeamA = 0;
         displayGoalForTeamA(scoreTeamA);
         displayFoulForTeamA(foulTeamA);
         displayCornerForTeamA(cornerTeamA);
 
-        scoreTeamB=0;
-        foulTeamB=0;
-        cornerTeamB=0;
+        scoreTeamB = 0;
+        foulTeamB = 0;
+        cornerTeamB = 0;
         displayGoalForTeamB(scoreTeamB);
         displayFoulForTeamB(foulTeamB);
         displayCornerForTeamB(cornerTeamB);
