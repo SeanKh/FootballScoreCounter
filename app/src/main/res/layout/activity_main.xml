@@ -12,7 +12,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.example.android.footballscorecounter.MainActivity"
+    android:background="@drawable/player"
     >
+
 
     <ImageView
         android:layout_width="fill_parent"
@@ -24,7 +26,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#B3FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,11 +45,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_margin_top"
+                android:layout_marginLeft="@dimen/button_margin"
                 android:text="@string/spinner_title"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <Spinner
                 android:id="@+id/teamA_spinner"
+                android:layout_marginLeft="@dimen/button_margin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 />
@@ -56,9 +61,10 @@
                 android:id="@+id/teamA_image"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:src="@drawable/arsenal1" />
+                android:src="@drawable/crystal_palace" />
             <!--GOAL SECTION-->
             <TextView
+
                 style="@style/text_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -189,10 +195,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/text_margin_top"
+                android:layout_marginLeft="@dimen/button_margin"
                 android:text="@string/spinner_title"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <Spinner
+                android:layout_marginLeft="@dimen/button_margin"
                 android:id="@+id/teamB_spinner"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -220,7 +228,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_score"
-                    android:textSize="@dimen/mainscore_text_size" />
+                    android:textSize="@dimen/mainscore_text_size"
+                    />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -258,6 +267,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/text_score"
                     android:textSize="@dimen/subscore_text_size"
+
                     android:id="@+id/team_b_foul" />
                 <Button
                     android:layout_width="wrap_content"
@@ -296,6 +306,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/text_score"
                     android:textSize="@dimen/subscore_text_size"
+
                     />
                 <Button
                     android:layout_width="wrap_content"
@@ -327,6 +338,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/reset"
+            android:textColor="@android:color/holo_red_light"
             android:onClick="reset"
             />
     </RelativeLayout>

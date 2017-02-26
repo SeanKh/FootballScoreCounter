@@ -1,11 +1,9 @@
 package com.example.android.footballscorecounter;
 
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -13,14 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ImageView image1;
-    private ImageView image2;
-    private String[] teams;
-    private Spinner spinner1;
-    private Spinner spinner2;
-    private TypedArray imgs;
-
     int scoreTeamA=0;
     int foulTeamA=0;
     int cornerTeamA=0;
@@ -29,51 +19,76 @@ public class MainActivity extends AppCompatActivity {
     int foulTeamB=0;
     int cornerTeamB=0;
 
+    // References to GUI components.
+    private Spinner teamA_spinner;
+    private ImageView teamA_image;
+
+    private Spinner teamB_spinner;
+    private ImageView teamB_image;
+    // Animal names
+    private final String[] teamA = {"Arsenal", "Crystal Palace", "Hull", "Sunderland", "Tottenham"};
+    // Animal image teamAIds
+    // Both names and image teamAIds are in the same order
+    private final int[] teamAIDs = {R.drawable.arsenal1, R.drawable.crystal_palace,
+            R.drawable.hull_city, R.drawable.sunderland1, R.drawable.tottenham1};
+
+    // Animal names
+    private final String[] teamB = {"Crystal Palace","Arsenal", "Hull", "Sunderland", "Tottenham"};
+    // Animal image teamAIds
+    // Both names and image teamAIds are in the same order
+    private final int[] teamBIDs = {R.drawable.crystal_palace, R.drawable.arsenal1,
+            R.drawable.hull_city, R.drawable.sunderland1, R.drawable.tottenham1};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        teams = getResources().getStringArray(R.array.team_list);
-        imgs = getResources().obtainTypedArray(R.array.team_flag_list);
 
-        image1 = (ImageView) findViewById(R.id.teamA_image);
-        spinner1 = (Spinner) findViewById(R.id.teamA_spinner);
+        // Find the GUI components.
+        this.teamA_spinner = (Spinner) findViewById(R.id.teamA_spinner);
+        this.teamA_image = (ImageView) findViewById(R.id.teamA_image);
 
-        image2 = (ImageView) findViewById(R.id.teamB_image);
-        spinner2 = (Spinner) findViewById(R.id.teamB_spinner);
+        this.teamB_spinner = (Spinner) findViewById(R.id.teamB_spinner);
+        this.teamB_image = (ImageView) findViewById(R.id.teamB_image);
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, teams);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(dataAdapter);
-        spinner2.setAdapter(dataAdapter);
+        // Create an array adapter and set it to the Spinner.
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, teamA);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        this.teamA_spinner.setAdapter(adapter);
 
-        spinner1.setOnItemSelectedListener(new OnItemSelectedListener() {
+        // Set the message to default.
+        this.teamA_spinner.setSelection(0);
 
+        // Set itm selected listener.
+        this.teamA_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                image1.setImageResource(imgs.getResourceId(
-                        spinner1.getSelectedItemPosition(), -1));
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                teamA_image.setImageResource(teamAIDs[position]);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
             }
         });
-        spinner2.setOnItemSelectedListener(new OnItemSelectedListener() {
 
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, teamB);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        this.teamB_spinner.setAdapter(adapter2);
+
+        // Set the message to default.
+        this.teamB_spinner.setSelection(0);
+
+        // Set itm selected listener.
+        this.teamB_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                image2.setImageResource(imgs.getResourceId(
-                        spinner2.getSelectedItemPosition(), -1));
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                teamB_image.setImageResource(teamBIDs[position]);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
             }
         });
     }
