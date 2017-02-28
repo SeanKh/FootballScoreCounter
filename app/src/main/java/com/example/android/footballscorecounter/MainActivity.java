@@ -19,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
     int foulTeamB = 0;
     int cornerTeamB = 0;
 
+    TextView scoreView;
+    TextView scoreView2;
+    TextView scoreView3;
+    TextView scoreView4;
+    TextView scoreView5;
+    TextView scoreView6;
+
     // References to GUI components.
     private Spinner teamA_spinner;
     private ImageView teamA_image;
@@ -91,39 +98,39 @@ public class MainActivity extends AppCompatActivity {
                 // Do nothing
             }
         });
+        scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView2= (TextView) findViewById(R.id.team_a_foul);
+        scoreView3= (TextView) findViewById(R.id.team_a_corner);
+        scoreView4= (TextView) findViewById(R.id.team_b_score);
+        scoreView5= (TextView) findViewById(R.id.team_b_foul);
+        scoreView6= (TextView) findViewById(R.id.team_b_corner);
     }
 
     /**
      * Displays the given score for Team A.
      */
     public void displayGoalForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
 
     public void displayFoulForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_foul);
-        scoreView.setText(String.valueOf(score));
+        scoreView2.setText(String.valueOf(score));
     }
 
     public void displayCornerForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_corner);
-        scoreView.setText(String.valueOf(score));
+        scoreView3.setText(String.valueOf(score));
     }
 
     public void displayGoalForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
-        scoreView.setText(String.valueOf(score));
+        scoreView4.setText(String.valueOf(score));
     }
 
     public void displayFoulForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_foul);
-        scoreView.setText(String.valueOf(score));
+        scoreView5.setText(String.valueOf(score));
     }
 
     public void displayCornerForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_corner);
-        scoreView.setText(String.valueOf(score));
+        scoreView6.setText(String.valueOf(score));
     }
 
     public void goalAdd_TeamA(View view) {
